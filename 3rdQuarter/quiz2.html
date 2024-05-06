@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Quiz2</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../style.css">
+        
+        <!-- BS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        
+        <!-- GFonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        
+        <style>
+            #container {
+                padding-top: 20px;
+                overflow: hidden auto;
+                background-image: url(background.jpg);
+                background-size: 102vw max(100vh, 100%);
+                background-position-x: -2vw;
+            }
+
+            #container * {
+                font-family: 'Rubik', sans-serif;
+            }
+
+            #container h1 {
+                letter-spacing: 7px;
+            }
+
+            #container hr {
+                opacity: 1 !important;
+            }
+
+            #container a {
+                color: #fff !important;
+                text-decoration: none !important;
+            }
+
+            #container img {
+                width: 40% !important;
+            }
+
+            #container .table {
+                opacity: 0.8;
+                overflow: hidden;
+                border-radius: var(--bs-border-radius);
+            }
+
+            #container .table :is(td, th) {
+                opacity: 1 !important;
+            }
+
+            #container .center {
+                text-align: center;
+            }
+
+            #container .thumbnails {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #container .thumbnails > * {
+                width: 50%;
+            }
+        </style>
+    </head>
+    <body class="bg-warning bg-gradient">
+        <nav class="sticky-top mb-3 d-md-flex d-none navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse d-flex flex-row justify-content-between">
+                    <ul class="navbar-nav">
+                        <div class="navbar-brand bg-info rounded-circle">
+                            <img height="48" src="https://www.top-hat.net/images/tophat.png">
+                        </div>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../mainpage.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">1st Quarter</a>
+                            <ul class="dropdown-menu text-muted">
+                                <p class="mx-2">HyperText Markup Language</p>
+                                <li><a class="dropdown-item" href="../1stQuarter/exercise1.html">Exercise 1</a></li>
+                                <li><a class="dropdown-item" href="../1stQuarter/exercise2.html">Exercise 2</a></li>
+                                <li><a class="dropdown-item" href="../1stQuarter/seatwork1.html">Seatwork 1</a></li>
+                                <li><a class="dropdown-item" href="../1stQuarter/seatwork2.html">Seatwork 2</a></li>
+                                <li><a class="dropdown-item" href="../1stQuarter/project.html">Project</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">2nd Quarter</a>
+                            <ul class="dropdown-menu text-muted">
+                                <p class="mx-2">Cascading Style Sheets</p>
+                                <li><a class="dropdown-item" href="../2ndQuarter/exercise1.html">Exercise 1</a></li>
+                                <li><a class="dropdown-item" href="../2ndQuarter/exercise2.html">Exercise 2</a></li>
+                                <li><a class="dropdown-item" href="../2ndQuarter/seatwork1.html">Seatwork 1</a></li>
+                                <li><a class="dropdown-item" href="../2ndQuarter/seatwork2.html">Seatwork 2</a></li>
+                                <li><a class="dropdown-item" href="../2ndQuarter/project.html">Project</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">3rd Quarter</a>
+                            <ul class="dropdown-menu text-muted">
+                                <p class="mx-2">Bootstrap 5</p>
+                                <li><a class="dropdown-item" href="seatwork1.html">Seatwork 1</a></li>
+                                <li><a class="dropdown-item" href="seatwork2.html">Seatwork 2</a></li>
+                                <li><a class="dropdown-item" href="quiz1.html">Quiz 1</a></li>
+                                <li><a class="dropdown-item active" href="quiz2.html">Quiz 2</a></li>
+                                <li><a class="dropdown-item" href="project.html">Project</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">4th Quarter</a>
+                            <ul class="dropdown-menu text-muted">
+                                <p class="mx-2">JavaScript</p>
+                                <li><a class="dropdown-item" href="../4thQuarter/seatwork1.html">Seatwork 1</a></li>
+                                <li><a class="dropdown-item" href="../4thQuarter/seatwork2.html">Seatwork 2</a></li>
+                                <li><a class="dropdown-item disabled" href="#">Quiz 1 (Activity)</a></li>
+                                <li><a class="dropdown-item" href="../index.html">Quiz 2</a></li>
+                                <li><a class="dropdown-item disabled" href="#">Project (not done)</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="mx-5 bg-light" id="container">
+            <nav class="navbar navbar-expand-sm bg-dark">
+                <div class="container-fluid">
+                    <ul class="navbar-nav">
+                        <a class="navbar-brand" href="#"><h2 style="color: red;">N</h2></a>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Movies</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Genres</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Register</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <h1 class="center">&LeftTriangle; Movie Review &RightTriangle;</h1>
+            <br>
+            <div class="row">
+                <div class="col-md-3 thumbnails">
+                    <img class="img-thumbnail" src="True_Detective_thumbnail.png">
+                    <br><br>
+                    <img class="img-thumbnail" src="Titanic_thumbnail.png">
+                    <br><br>
+                    <img class="img-thumbnail" src="The_Shawshank_Redemption_thumbnail.png">
+                    <br>
+                </div>
+                <div class="col-md-6">
+                    <table class="table table-bordered center">
+                        <tr>
+                            <th class="bg-info">Title</th>
+                            <th class="bg-info">Synopsis</th>
+                            <th class="bg-info">Casts and Directors</th>
+                            <th class="bg-info">Movie Review</th>
+                        </tr>
+                        <tr>
+                            <td class="bg-success">True Detective</td>
+                            <td class="bg-success">Anthology series in which police investigations unearth the personal and professional secrets of those involved, both within and outside the law.</td>
+                            <td class="bg-success">
+                                Casts: Vince, VaughnColin, FarrellRachel, McAdams
+                                <br><br>
+                                Directors: Nic PizzolattoIssa, López
+                            </td>
+                            <td class="bg-success">
+                                <em>
+                                    "The first season of True Detective is among the best television I've ever seen. Just read through the reviews to see how loved that first season was. This show is an anthology series and every season is different in quality."
+                                    - DiCaprioFan1
+                                    <br><br>
+                                    "Before season one aired I had never seen anything so compelling in storytelling or filmmaking in my entire life. The following two seasons are watchable and well-made but nowhere near as phenomenal as season one."
+                                    - ksgillihan
+                                </em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bg-dark">Titanic</td>
+                            <td class="bg-dark">A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.</td>
+                            <td class="bg-dark">
+                                Casts: Leonardo DiCaprio, Kate Winslet, Billy Zane
+                                <br><br>
+                                Director: James Cameron
+                            </td>
+                            <td class="bg-dark">
+                                <em>
+                                    "It is said 'Titanic' is the film with the most continuity errors of all films. Despite this, though, the film was indeed a masterpiece. The sheer scale of the sets and entire production were simply mind blowing! The sinking of the Titanic was the greatest ship sinking scene EVER and was done with such meticulous detail that one would think they actually really sunk the ship."
+                                    - paulclaassen
+                                </em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="bg-danger">The Shawshank Redemption</td>
+                            <td class="bg-danger">Over the course of several years, two convicts form a friendship, seeking consolation and, eventually, redemption through basic compassion.</td>
+                            <td class="bg-danger">
+                                Casts: Tim Robbins, Morgan Freeman, Bob Gunton
+                                <br><br>
+                                Director: Frank Darabont
+                            </td>
+                            <td class="bg-danger">
+                                <em>
+                                    "The ultimate story of friendship, of hope, and of life, and overcoming adversity."
+                                    - Sleepin_Dragon
+                                    <br><br>
+                                    "This movie is not your ordinary Hollywood flick. It has a great and deep message. This movie has a foundation and just kept on being built on from their and that foundation is hope."
+                                    - alexkolokotronis
+                                </em>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="center">Average Rating:</h3>
+                    <br><br><br><br>
+                    <h2 class="center">8.9/10&nbsp;&starf;</h2>
+                    <br><br><br>
+                    <h2 class="center">7.9/10&nbsp;&starf;</h2>
+                    <br><br><br>
+                    <h2 class="center">9.3/10&nbsp;&starf;</h2>
+                    <br>
+                </div>
+            </div>
+            <hr class="container">
+            <h3 class="center">Source:</h3>
+            <h2 class="center"><a class="badge bg-primary" target="_blank" href="https://www.imdb.com/">IMDb</a></h2>
+            <div class="mt-5 p-4 text-center">
+                <div class="row justify-content-center">
+                    <div class="form-floating col-md-3 px-0 mx-2">
+                        <input class="form-control" type="text" id="search" placeholder="Search">
+                        <label for="search">Search</label>
+                    </div>
+                    <button type="submit" class="btn btn-warning col-md-1">Search</button>
+                </div>
+            </div>
+        </div>
+        <br>
+    </body>
+</html>
