@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Quiz2</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../style.css">
+        
+        <!-- BS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        
+        <!-- GFonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+        
+        <style>
+            #container {
+                background-color: #90bc8c !important;
+                font-family: Fira Mono, Arial, Helvetica, sans-serif !important;
+            }
+
+            header {
+                color: #90bc8c !important;
+                background-color: #000000 !important;
+                padding: 15px !important;
+                padding-top: 30px !important;
+                padding-bottom: 30px !important;
+            }
+            
+            .container-body {
+                gap: 5px !important;
+                width: 700px !important;
+                margin: auto !important;
+                display: grid !important;
+                grid-template-areas: 'header right' !important;
+                color: #000000 !important;
+            }
+
+            button {
+                padding: 5px !important;
+            }
+
+            .grid-header {
+                grid-area: header !important;
+            }
+
+            .grid-right {
+                grid-area: right !important;
+            }
+
+            .grid-menu {
+                margin: auto !important;
+                justify-content: center !important;
+                display: flex !important;
+                gap: 15px !important;
+            }
+
+            .subgrid-menu-item {
+                border: 1px solid #627f5f !important;
+                border-radius: 10px !important;
+                padding: 10px !important;
+                max-width: 200px !important;
+            }
+
+            img {
+                border-radius: 20px !important;
+            }
+
+            footer {
+                color: #90bc8c !important;
+                background-color: #000000 !important;
+                padding: 10px !important;
+            }
+        </style>
+    </head>
+    <body class="bg-warning bg-gradient">
+        <nav class="sticky-top mb-3 d-md-flex d-none navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse d-flex flex-row justify-content-between">
+                    <ul class="navbar-nav">
+                        <div class="navbar-brand bg-info rounded-circle">
+                            <img height="48" src="https://www.top-hat.net/images/tophat.png">
+                        </div>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../mainpage.html">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">1st Quarter</a>
+                            <ul class="dropdown-menu text-muted">
+                                <p class="mx-2">HyperText Markup Language</p>
+                                <li><a class="dropdown-item" href="../1stQuarter/exercise1.html">Exercise 1</a></li>
+                                <li><a class="dropdown-item" href="../1stQuarter/exercise2.html">Exercise 2</a></li>
+                                <li><a class="dropdown-item" href="../1stQuarter/seatwork1.html">Seatwork 1</a></li>
+                                <li><a class="dropdown-item" href="../1stQuarter/seatwork2.html">Seatwork 2</a></li>
+                                <li><a class="dropdown-item" href="../1stQuarter/project.html">Project</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">2nd Quarter</a>
+                            <ul class="dropdown-menu text-muted">
+                                <p class="mx-2">Cascading Style Sheets</p>
+                                <li><a class="dropdown-item" href="exercise1.html">Exercise 1</a></li>
+                                <li><a class="dropdown-item" href="exercise2.html">Exercise 2</a></li>
+                                <li><a class="dropdown-item active" href="seatwork1.html">Seatwork 1</a></li>
+                                <li><a class="dropdown-item" href="seatwork2.html">Seatwork 2</a></li>
+                                <li><a class="dropdown-item" href="project.html">Project</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">3rd Quarter</a>
+                            <ul class="dropdown-menu text-muted">
+                                <p class="mx-2">Bootstrap 5</p>
+                                <li><a class="dropdown-item" href="../3rdQuarter/seatwork1.html">Seatwork 1</a></li>
+                                <li><a class="dropdown-item" href="../3rdQuarter/seatwork2.html">Seatwork 2</a></li>
+                                <li><a class="dropdown-item" href="../3rdQuarter/quiz1.html">Quiz 1</a></li>
+                                <li><a class="dropdown-item" href="../3rdQuarter/quiz2.html">Quiz 2</a></li>
+                                <li><a class="dropdown-item" href="../3rdQuarter/project.html">Project</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">4th Quarter</a>
+                            <ul class="dropdown-menu text-muted">
+                                <p class="mx-2">JavaScript</p>
+                                <li><a class="dropdown-item" href="../4thQuarter/seatwork1.html">Seatwork 1</a></li>
+                                <li><a class="dropdown-item" href="../4thQuarter/seatwork2.html">Seatwork 2</a></li>
+                                <li><a class="dropdown-item disabled" href="#">Quiz 1 (Activity)</a></li>
+                                <li><a class="dropdown-item" href="../index.html">Quiz 2</a></li>
+                                <li><a class="dropdown-item disabled" href="#">Project (not done)</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="mx-5 p-4 bg-light" id="container">
+            <header>
+                <center>
+                    <h1>Juan's Pizza</h1>
+                    <hr color="#90bc8c">
+                    <p>Home | About | Contact</p>
+                </center>
+            </header>
+    
+            <br>
+    
+            <section class="container-body">
+                <div class="grid-header">
+                    <p>Welcome to</p>
+                    <h3>Juan's Pizza</h3>
+                    <p>Provide address here.</p>
+                    <button><strong>View Menu</strong></button>
+                </div>
+                <div class="grid-right">
+                    <img src="https://t3.ftcdn.net/jpg/01/33/61/72/240_F_133617244_dWdivRXwoLVzowl1kn3iFP9JGcuNd8n6.jpg">
+                </div>
+            </section>
+    
+            <br>
+    
+            <section class="grid-menu">
+                <div class="subgrid-menu-item">
+                    <h3>Pizza Menu</h3>
+                    <center>
+                        <img src="https://t4.ftcdn.net/jpg/01/25/88/23/240_F_125882386_mr2JIucekLR924ortdiBiWu38bvMQGS2.jpg" width="150" height="150">
+                    </center>
+                    <p>Get our Manhattan Classic Cheese Pizza with your choice of sauce and crust.</p>
+                </div>
+                <div class="subgrid-menu-item">
+                    <h3>Pizza Menu</h3>
+                    <center>
+                        <img src="https://t4.ftcdn.net/jpg/01/25/88/23/240_F_125882386_mr2JIucekLR924ortdiBiWu38bvMQGS2.jpg" width="150" height="150">
+                    </center>
+                    <p>Get our Manhattan Classic Cheese Pizza with your choice of sauce and crust.</p>
+                </div>
+                <div class="subgrid-menu-item">
+                    <h3>Pizza Menu</h3>
+                    <center>
+                        <img src="https://t4.ftcdn.net/jpg/01/25/88/23/240_F_125882386_mr2JIucekLR924ortdiBiWu38bvMQGS2.jpg" width="150" height="150">
+                    </center>
+                    <p>Get our Manhattan Classic Cheese Pizza with your choice of sauce and crust.</p>
+                </div>
+                <div class="subgrid-menu-item">
+                    <h3>Pizza Menu</h3>
+                    <center>
+                        <img src="https://t4.ftcdn.net/jpg/01/25/88/23/240_F_125882386_mr2JIucekLR924ortdiBiWu38bvMQGS2.jpg" width="150" height="150">
+                    </center>
+                    <p>Get our Manhattan Classic Cheese Pizza with your choice of sauce and crust.</p>
+                </div>
+            </section>
+    
+            <br>
+    
+            <footer>
+                <p>Calvin A. Zosa | 9-Emerald</p>
+            </footer>
+        </div>
+    </body>
+</html>
