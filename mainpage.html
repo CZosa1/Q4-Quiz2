@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Quiz2</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        
+        <!-- BS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        
+        <!-- GFonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    </head>
+    <body class="bg-warning bg-gradient">
+        <nav class="sticky-top mb-3 d-md-flex d-none navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse d-flex flex-row justify-content-between">
+                    <ul class="navbar-nav">
+                        <div class="navbar-brand bg-info rounded-circle">
+                            <img height="48" src="https://www.top-hat.net/images/tophat.png">
+                        </div>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">1st Quarter</a>
+                            <ul class="dropdown-menu text-muted">
+                                <p class="mx-2">HyperText Markup Language</p>
+                                <li><a class="dropdown-item" href="1stQuarter/exercise1.html">Exercise 1</a></li>
+                                <li><a class="dropdown-item" href="1stQuarter/exercise2.html">Exercise 2</a></li>
+                                <li><a class="dropdown-item" href="1stQuarter/seatwork1.html">Seatwork 1</a></li>
+                                <li><a class="dropdown-item" href="1stQuarter/seatwork2.html">Seatwork 2</a></li>
+                                <li><a class="dropdown-item" href="1stQuarter/project.html">Project</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">2nd Quarter</a>
+                            <ul class="dropdown-menu text-muted">
+                                <p class="mx-2">Cascading Style Sheets</p>
+                                <li><a class="dropdown-item" href="2ndQuarter/exercise1.html">Exercise 1</a></li>
+                                <li><a class="dropdown-item" href="2ndQuarter/exercise2.html">Exercise 2</a></li>
+                                <li><a class="dropdown-item" href="2ndQuarter/seatwork1.html">Seatwork 1</a></li>
+                                <li><a class="dropdown-item" href="2ndQuarter/seatwork2.html">Seatwork 2</a></li>
+                                <li><a class="dropdown-item" href="2ndQuarter/project.html">Project</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">3rd Quarter</a>
+                            <ul class="dropdown-menu text-muted">
+                                <p class="mx-2">Bootstrap 5</p>
+                                <li><a class="dropdown-item" href="3rdQuarter/seatwork1.html">Seatwork 1</a></li>
+                                <li><a class="dropdown-item" href="3rdQuarter/seatwork2.html">Seatwork 2</a></li>
+                                <li><a class="dropdown-item" href="3rdQuarter/quiz1.html">Quiz 1</a></li>
+                                <li><a class="dropdown-item" href="3rdQuarter/quiz2.html">Quiz 2</a></li>
+                                <li><a class="dropdown-item" href="3rdQuarter/project.html">Project</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">4th Quarter</a>
+                            <ul class="dropdown-menu text-muted">
+                                <p class="mx-2">JavaScript</p>
+                                <li><a class="dropdown-item" href="4thQuarter/seatwork1.html">Seatwork 1</a></li>
+                                <li><a class="dropdown-item" href="4thQuarter/seatwork2.html">Seatwork 2</a></li>
+                                <li><a class="dropdown-item disabled" href="#">Quiz 1 (Activity)</a></li>
+                                <li><a class="dropdown-item" href="index.html">Quiz 2</a></li>
+                                <li><a class="dropdown-item disabled" href="#">Project</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex gap-2">
+                        <input class="rounded-pill form-control" name="q" type="text" placeholder="...">
+                        <button class="btn btn-danger rounded-pill" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        
+        <section id="portfolio" class="px-3">
+            <div class="text-center">
+                <h1 class="text-random-effect">My Online Portfolio</h1>
+                <div id="logo-container" style="height: 164px;">
+                    <img id="logo" height="164" src="https://www.top-hat.net/images/tophat.png">
+                </div>
+            </div>
+        </section>
+        
+        <script>
+            var start_time = new Date().getTime();
+            var random_characters = '1234567890!@#$%^&*()-=[];\',./_+{}:"<>?\\|~`';
+            
+            function replaceAt(s, index, replacement) {
+                return s.substring(0, index) + replacement + s.substring(index + replacement.length);
+            }
+            
+            function updateText() {
+                var current_time = new Date();
+                var seconds = current_time.getTime();
+                
+                var random_texts = $('.text-random-effect');
+                for (var i = 0; i < random_texts.length; i++) {
+                    var element = $(random_texts[i]);
+                    var elapsed_time = seconds - start_time;
+                    var percent = Math.min(Math.max(elapsed_time, 0) / 300, 1);
+                    
+                    var original_text = element.attr('text');
+                    if (original_text === undefined) {
+                        original_text = element.text();
+                        element.attr('text', original_text);
+                        
+                        var result = '';
+                        for (var i = 0; i < original_text.length; i++) {
+                            var char = original_text[i];
+                            if (char != ' ') char = random_characters[Math.round(Math.random() * (random_characters.length - 1))];
+                            result += char;
+                        }
+                        
+                        element.text(result);
+                    }
+                    
+                    var current_text = element.text();
+                    
+                    if (current_text == original_text) {
+                        element.attr('class', element.attr('class').replace('text-random-effect', ''));
+                        continue;
+                    }
+                    
+                    var j = 0;
+                    do {
+                        j = Math.round(Math.random() * (original_text.length - 1));
+                    } while (original_text[j] == current_text[j]);
+                    
+                    current_text = replaceAt(current_text, j, original_text[j]);
+                    element.text(current_text);
+                }
+                
+                setTimeout(updateText, 50);
+            }
+            
+            updateText();
+        </script>
+    </body>
+</html>
