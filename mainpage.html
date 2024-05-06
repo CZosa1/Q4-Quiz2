@@ -92,58 +92,56 @@
         </section>
         
         <script>
-            var start_time = new Date().getTime();
-            var random_characters = '1234567890!@#$%^&*()-=[];\',./_+{}:"<>?\\|~`';
+            var start_time = new Date().getTime(); // This will be an integer that contains the milliseconds since the epoch time
+            var random_characters = '1234567890!@#$%^&*()-=[];\',./_+{}:"<>?\\|~`'; // A string containing a few random characters
             
             function replaceAt(s, index, replacement) {
-                return s.substring(0, index) + replacement + s.substring(index + replacement.length);
+                return s.substring(0, index) + replacement + s.substring(index + replacement.length); // This will replace the character in the string at an index with a new string
             }
             
             function updateText() {
-                var current_time = new Date();
-                var seconds = current_time.getTime();
+                var current_time = new Date(); // Constructs a new Date object
+                var ms = current_time.getTime(); // Milliseconds since epoch time
+                var elapsed_time = ms - start_time; // Milliseconds since the script started
                 
-                var random_texts = $('.text-random-effect');
-                for (var i = 0; i < random_texts.length; i++) {
-                    var element = $(random_texts[i]);
-                    var elapsed_time = seconds - start_time;
-                    var percent = Math.min(Math.max(elapsed_time, 0) / 300, 1);
+                var random_texts = $('.text-random-effect'); // Get a list of elements with the "text-random-effect" class
+                for (var i = 0; i < random_texts.length; i++) { // Iterate through the list
+                    var element = $(random_texts[i]); // Get the current element
                     
-                    var original_text = element.attr('text');
-                    if (original_text === undefined) {
-                        original_text = element.text();
-                        element.attr('text', original_text);
+                    var original_text = element.attr('text'); // Get the original text (may be undefined)
+                    if (original_text === undefined) { // Check if it is undefined
+                        original_text = element.text(); // Get the current text and assign it to the variable "original_text"
+                        element.attr('text', original_text); // Set the "text" attribute to the "original_text" variable
                         
-                        var result = '';
+                        var result = ''; // Create an empty string
                         for (var i = 0; i < original_text.length; i++) {
-                            var char = original_text[i];
+                            var char = original_text[i]; // Get the current character from the original text
                             if (char != ' ') char = random_characters[Math.round(Math.random() * (random_characters.length - 1))];
-                            result += char;
+                            // If the character is not a space, set it to a random value from the "random_characters" array
+                            result += char; // Concatenate the character to the result
                         }
                         
-                        element.text(result);
+                        element.text(result); // Set the current text to the result
                     }
                     
-                    var current_text = element.text();
+                    var current_text = element.text(); // Get the current text of the element
                     
-                    if (current_text == original_text) {
-                        element.attr('class', element.attr('class').replace('text-random-effect', ''));
-                        continue;
+                    if (current_text === original_text) { // If the current_text is already the same as the original text, then:
+                        element.attr('class', element.attr('class').replace('text-random-effect', '')); // Remove the "text-random-effect" class
+                        continue; // Continue to the next element
                     }
                     
-                    var j = 0;
+                    var j = 0; // Initialize the variable j to 0
                     do {
-                        j = Math.round(Math.random() * (original_text.length - 1));
-                    } while (original_text[j] == current_text[j]);
+                        j = Math.round(Math.random() * (original_text.length - 1)); // Set j to a random integer from 0 to the max index of the "original_text" string
+                    } while (original_text[j] === current_text[j]); // do {...} while (...) will run the code {...}, then if the statement (...) is false, will stop looping
                     
-                    current_text = replaceAt(current_text, j, original_text[j]);
-                    element.text(current_text);
+                    current_text = replaceAt(current_text, j, original_text[j]); // Replace the character at index j with the original character
+                    element.text(current_text); // Set the text of the element to the new text
                 }
-                
-                setTimeout(updateText, 50);
             }
-            
-            updateText();
+
+            setInterval(updateText, 50); // Call the "update_text" function every 50 milliseconds
         </script>
     </body>
 </html>
